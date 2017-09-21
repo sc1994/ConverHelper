@@ -241,6 +241,31 @@ namespace Common
             return false;
         }
 
+        /// <summary>
+        /// 当字符串为空时, 展示的替代字符
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="show">替代字符(默认为未知)</param>
+        /// <returns></returns>
+        public static string ShowNullOrEmpty(this string s, string show = "未知")
+        {
+            if (s == null) return show;
+            if (s.Trim() == string.Empty) return show;
+            return s;
+        }
+
+        /// <summary>
+        /// 当枚举为空时, 展示的替代字符
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="show">替代字符(默认为未知)</param>
+        /// <returns></returns>
+        public static string ShowNullOrEmpty(this Enum s, string show = "未知")
+        {
+            if (s == null) return show;
+            return s.ToString();
+        }
+
         #region 其他
         /// <summary>  
         /// 获取当前时间戳  
